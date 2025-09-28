@@ -40,14 +40,22 @@ class MainActivity : AppCompatActivity() {
         cardListAlarm = findViewById<MaterialCardView>(R.id.card2)
         btnCreateAlarm = findViewById<MaterialButton>(R.id.create_button)
         btnCancelAlarm = findViewById<MaterialButton>(R.id.cancel_button)
-        textAlarmTime = findViewById<TextClock>(R.id.alarmTime)
+        textAlarmTime = findViewById<TextView>(R.id.alarmTime)
         cardListAlarm.visibility = View.GONE
 
         btnCreateAlarm.setOnClickListener {
             showTimerDialog()
         }
         btnCancelAlarm.setOnClickListener {
-            setAlarm(calendar.timeInMillis, "Stop")
+            val stopServiceIntent = Intent(this, AlarmService::class.java)
+            stopService(stopServiceIntent)
+
+            val alarmIntent = Intent(this, AlarmBroadcastReceiver::class.java)
+            val pendingIntent = PendingIntent.getBroadcast(this, 234324243, alarmIntent, PendingIntent.FLAG_IMMUTABLE)
+            val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+            alarmManager.cancel(pendingIntent)
+
+            Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_SHORT).show()
             cardListAlarm.visibility = View.GONE
         }
     }
@@ -98,10 +106,6 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-        else if (action == "Stop"){
-            alarmManager.cancel(pendingIntent)
-            sendBroadcast(intent)
-            Toast.makeText(this,"Stop Alarm", Toast.LENGTH_SHORT).show()
-        }
+
     }
 }

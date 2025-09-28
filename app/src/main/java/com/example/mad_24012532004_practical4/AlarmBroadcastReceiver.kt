@@ -15,6 +15,5 @@ class AlarmBroadcastReceiver : BroadcastReceiver() {
             else if (str1 == "Stop")
                 context.stopService(intentService)
         }
-        TODO("AlarmBroadcastReceiver.onReceive() is not implemented")
     }
 }

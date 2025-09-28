@@ -141,12 +141,13 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/imageView1" />
 
-                    <TextClock
+                    <TextView
                         android:id="@+id/alarmTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
+                        tools:text="10:30:00 AM"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/text4" />

@@ -24,7 +24,11 @@ class AlarmService : Service() {
     }
 
     override fun onDestroy() {
-        mediaPlayer.stop()
+        if (this :: mediaPlayer.isInitialized){
+            mediaPlayer.stop()
+            mediaPlayer.release()
+        }
+        //mediaPlayer.stop()
         super.onDestroy()
     }
 }

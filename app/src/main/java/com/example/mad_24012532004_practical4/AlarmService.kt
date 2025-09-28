@@ -22,6 +22,7 @@ class AlarmService : Service() {
         }
         return START_STICKY
     }
+
     override fun onDestroy() {
         mediaPlayer.stop()
         super.onDestroy()

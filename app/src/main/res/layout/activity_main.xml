@@ -126,18 +126,17 @@
                         android:id="@+id/imageView1"
                         android:layout_width="match_parent"
                         android:layout_height="193dp"
-                        android:contentDescription=""
+                        android:contentDescription="Image2"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/alarm1" />
 
                     <TextView
                         android:id="@+id/text4"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="@string/settime"
-                        android:textAlignment="center"
-                        android:textStyle="bold"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/imageView1" />
@@ -147,7 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:format12Hour="hh:mm:ss a, dd MMM yyyy"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/text4" />
@@ -156,9 +155,7 @@
                         android:id="@+id/cancel_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="5dp"
-                        android:backgroundTint="@color/green"
+                        android:layout_margin="8dp"
                         android:text="@string/cancel"
                         app:icon="@drawable/outline_alarm_off_24"
                         app:layout_constraintStart_toStartOf="parent"

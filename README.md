@@ -20,7 +20,7 @@ To create an Android application that allows a user to set a specific time for a
 
 | Main Screen                                   | Time Picker Dialog                               | Alarm Set Screen                                    |
 | --------------------------------------------- | ------------------------------------------------ | --------------------------------------------------- |
-| <img width="180" height="400" alt="Screenshot_20250928_222033" src="https://github.com/user-attachments/assets/a8f4d542-7930-4c33-870b-5753cbccb861" /> | <img width="180" height="400" alt="Screenshot_20251001_092005" src="https://github.com/user-attachments/assets/d9c66ff3-e34e-4140-9a20-6eb906699fef" /> | <img width="180" height="400" alt="Screenshot_20250928_222107" src="https://github.com/user-attachments/assets/8437be8d-9553-41c9-9fe7-90caa4686e6c" /> |
+| <img width="180" height="400" alt="Screenshot_20250928_222033" src="https://github.com/user-attachments/assets/a8f4d542-7930-4c33-870b-5753cbccb861" /> | <img width="180" height="400" alt="Screenshot_20251001_093516" src="https://github.com/user-attachments/assets/6fd144f8-f511-480f-8f1f-7cccd2bbbebb" /> | <img width="180" height="400" alt="Screenshot_20250928_222107" src="https://github.com/user-attachments/assets/8437be8d-9553-41c9-9fe7-90caa4686e6c" /> |
 
 
 ## Core Concepts Demonstrated

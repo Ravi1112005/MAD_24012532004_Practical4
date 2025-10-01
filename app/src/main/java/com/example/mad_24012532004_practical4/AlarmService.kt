@@ -9,7 +9,6 @@ class AlarmService : Service() {
 
     lateinit var mediaPlayer: MediaPlayer
     override fun onBind(intent: Intent): IBinder {
-
         TODO("Return the communication channel to the service.")
     }
 
@@ -17,9 +16,7 @@ class AlarmService : Service() {
         if (!this::mediaPlayer.isInitialized){
             mediaPlayer = MediaPlayer.create(this,R.raw.alarm)
         }
-        if (intent!=null){
-            mediaPlayer.start()
-        }
+        mediaPlayer.start()
         return START_STICKY
     }
 
@@ -28,7 +25,6 @@ class AlarmService : Service() {
             mediaPlayer.stop()
             mediaPlayer.release()
         }
-        //mediaPlayer.stop()
         super.onDestroy()
     }
 }

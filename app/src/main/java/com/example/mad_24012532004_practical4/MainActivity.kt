@@ -47,21 +47,12 @@ class MainActivity : AppCompatActivity() {
             showTimerDialog()
         }
         btnCancelAlarm.setOnClickListener {
-            val stopServiceIntent = Intent(this, AlarmService::class.java)
-            stopService(stopServiceIntent)
-
-            val alarmIntent = Intent(this, AlarmBroadcastReceiver::class.java)
-            val pendingIntent = PendingIntent.getBroadcast(this, 234324243, alarmIntent, PendingIntent.FLAG_IMMUTABLE)
-            val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
-            alarmManager.cancel(pendingIntent)
-
-            Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_SHORT).show()
-            cardListAlarm.visibility = View.GONE
+            setAlarm(-1,"Stop")
         }
     }
 
     private fun showTimerDialog (){
-        val mTimePicker: TimePickerDialog
+        val calendar = Calendar.getInstance()
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
         val minute = calendar.get(Calendar.MINUTE)
 
@@ -103,8 +94,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"Start Alarm", Toast.LENGTH_SHORT).show()
             } else {
                 startActivity(Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM))
-
             }
+        }else if(action=="Stop"){
+            alarmManager.cancel(pendingIntent)
+            sendBroadcast(intent)
+            Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_SHORT).show()
+            cardListAlarm.visibility = View.GONE
         }
 
     }
